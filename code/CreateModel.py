@@ -1,3 +1,6 @@
+# Create the search map with initial belief(TPM)
+#
+
 import numpy as np
 from scipy.stats import multivariate_normal
 
