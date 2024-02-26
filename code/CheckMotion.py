@@ -50,7 +50,7 @@ if __name__ == "__main__":
     }
     position_valid = np.array([[1, 0], [1, 0], [0, 1], [0, 1]])
     position_invalid1 = np.array([[1, 0], [1, 0], [0, 1], [1, 0]])
-    position_invalid2 = np.array([[1, 0], [0, 1], [-1, -1], [1, 0]])
+    position_invalid2 = np.array([[1, 0], [0, 1], [-0.7071, -0.7071], [1, 0]])
 
     print("Testing valid motion:")
     print(check_motion(position_valid, model))  # Should print True
