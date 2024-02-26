@@ -75,7 +75,7 @@ def create_random_solution(model):
 
     return position
 
-# Example usage and testing
+# Example usage
 if __name__ == "__main__":
     
     from MotionDecode import motion_decode
