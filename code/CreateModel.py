@@ -35,7 +35,7 @@ def create_model():
     ymax = MAP_SIZE // 2
     xs = 0  # Start search X position
     ys = 0  # Start search Y position
-    n = 20
+    n = 20  # Length of the search path?!
     MRANGE = 4
 
     # Model
