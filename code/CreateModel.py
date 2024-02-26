@@ -14,7 +14,7 @@ def create_model():
     # Generate the probability map
     mu1 = np.array([10, 10])    # mean vector
     Sigma1 = MAP_SIZE * np.array([[0.1, 0], [0, 0.1]])  # covariance matrix
-    coords = np.column_stack((X.flatten(), Y.flatten()))    # matrix X and Y are flattened and stacked together
+    coords = np.column_stack((X.flatten(), Y.flatten()))    # matrix X and Y are flattened(降维) and stacked(堆叠合并) together
     F1 = multivariate_normal.pdf(coords, mean=mu1, cov=Sigma1)  # create a probability distribution
     F1 = np.reshape(F1, (len(y), len(x)))   # reshape the distribution to the size of the map
     F1 = F1 / np.sum(F1)    # normalize the distribution
