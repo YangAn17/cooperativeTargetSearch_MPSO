@@ -15,7 +15,7 @@ def dir_to_move(dir):
 
     return directions.get(dir, [0, 0])
 
-# Example usage:
+# Example usage
 if __name__ == '__main__':
     direction = 'N'
     move_vector = dir_to_move(direction)

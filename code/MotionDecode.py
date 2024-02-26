@@ -28,7 +28,7 @@ def motion_decode(motion):
 
     return move
 
-# Example usage:
+# Example usage
 if __name__ == "__main__":
     motion_vector = [1, 0]
     decoded_direction = motion_decode(motion_vector)
