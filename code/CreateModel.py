@@ -52,7 +52,7 @@ def create_model():
         'MAPSIZE': MAP_SIZE,
         'X': X,
         'Y': Y,
-        'targetMoves': 10,  # Must be divisible by the path length (e.g, mod(N,move)=0)
+        'targetMoves': 10,  # The target moves setp that must be divisible by the path length (e.g, mod(N,move)=0)
         'targetDir': 'E'    # The target moves direction
     }
 
