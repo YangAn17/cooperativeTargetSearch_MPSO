@@ -41,11 +41,12 @@ if __name__ == "__main__":
     from CheckMotion import check_motion
     from PathFromMotion import path_from_motion
     from UpdateMap import update_map
+    from scipy.sparse import rand
 
     # Define model parameters
     model = {
         'Pmap': np.random.rand(10, 10),  # Example probability map
-        'n': 5,
+        'n': 20,
         'xs': 0,
         'ys': 0,
         'xmin': -5,
@@ -57,7 +58,9 @@ if __name__ == "__main__":
     }
 
     # Generate random position
-    position = np.random.rand(5, 2)  # Example position array
+    p = 0.5  # 非零元素的比例
+    position = np.random.rand(20, 2)
+    position = np.array(position >= p, dtype=int)
 
     # Calculate cost
     cost = my_cost(position, model)

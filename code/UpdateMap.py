@@ -2,6 +2,7 @@
 # measurement
 
 import numpy as np
+from DirToMove import dir_to_move
 
 # input: 当前更新时刻, 路径长度, 目标运动长度, 目标运动方向, 当前无人机位置, 概率地图
 def update_map(current_step, path_length, total_moves, dir, location, map):

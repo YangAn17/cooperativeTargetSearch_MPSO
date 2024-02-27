@@ -2,6 +2,7 @@
 #
 
 import numpy as np
+from MotionDecode import motion_decode
 
 def path_from_motion(position, model):
     n = model['n']

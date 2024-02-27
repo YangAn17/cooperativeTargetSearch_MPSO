@@ -2,6 +2,7 @@
 #
 
 import numpy as np
+from MotionDecode import motion_decode
 
 def check_motion(position, model):
     # Load model parameters
