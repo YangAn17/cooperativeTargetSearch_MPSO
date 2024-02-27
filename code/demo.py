@@ -1,5 +1,4 @@
 import numpy as np
-p = 0.5  # 非零元素的比例
-position = np.random.rand(20, 2)
-position = np.array(position >= p, dtype=int)
-print(position)
+map = np.ones((10, 10))  # 示例地图
+map[5, 5] = 5  # 目标位置
+print(map)

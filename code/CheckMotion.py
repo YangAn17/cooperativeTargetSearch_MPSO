@@ -30,7 +30,6 @@ def check_motion(position, model):
     
     # Check duplicate rows
     _, indices = np.unique(path, axis=0, return_index=True)
-    print("Unique indices:", indices)
     if len(indices) < n:
         valid = False
     return valid

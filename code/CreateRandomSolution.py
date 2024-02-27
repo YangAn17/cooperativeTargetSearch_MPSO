@@ -2,6 +2,7 @@
 #
 
 import numpy as np
+from MotionDecode import motion_decode
 
 def create_random_solution(model):
     n = model['n']  # Load the number of path nodes

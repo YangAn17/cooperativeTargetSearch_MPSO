@@ -20,7 +20,7 @@ def update_map(current_step, path_length, total_moves, dir, location, map):
             map = tmp_map / np.sum(tmp_map)    # Scale it to 1
     
     p_sensor_no_detection = np.ones((map_size_x, map_size_y))  # Initialize the probability of no detection with ones
-    p_sensor_no_detection[location['y'], location['x']] = 0  # For binary sensor model, the probability of no detection at UAV location is zero
+    p_sensor_no_detection[int(location['y']), int(location['x'])] = 0  # For binary sensor model, the probability of no detection at UAV location is zero
     new_map = p_sensor_no_detection * map  # Update the belief map
     scale_factor = np.sum(new_map)  # Calculate the scaling factor
     new_map = new_map / scale_factor  # Scale the updated belief map
