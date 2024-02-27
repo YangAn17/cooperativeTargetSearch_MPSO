@@ -3,6 +3,9 @@
 #
 
 import numpy as np
+from CheckMotion import check_motion
+from PathFromMotion import path_from_motion
+from UpdateMap import update_map
 
 def my_cost(position, model):
     if not check_motion(position, model):  # Invalid path

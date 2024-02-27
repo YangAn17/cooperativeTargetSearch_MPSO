@@ -13,15 +13,15 @@ def create_model():
     X, Y = np.meshgrid(x, y)    # X row vectors are the same, Y column vectors are the same
 
     # Generate the probability map
-    mu1 = np.array([20, 20])    # mean vector
-    Sigma1 = MAP_SIZE * np.array([[1.0, 0], [0, 1.0]])  # covariance matrix includes four elements
+    mu1 = np.array([10, 10])    # mean vector
+    Sigma1 = MAP_SIZE * np.array([[0.1, 0], [0, 0.1]])  # covariance matrix includes four elements
     coords = np.column_stack((X.flatten(), Y.flatten()))    # matrix X and Y are flattened(降维) and stacked(堆叠合并) together
     F1 = multivariate_normal.pdf(coords, mean=mu1, cov=Sigma1)  # create a probability distribution
     F1 = np.reshape(F1, (len(y), len(x)))   # reshape the distribution to the size of the map
     F1 = F1 / np.sum(F1)    # normalize the distribution
 
-    mu2 = np.array([10, 10])
-    Sigma2 = MAP_SIZE * np.array([[1.0, 0], [0, 1.0]])
+    mu2 = np.array([5, 5])
+    Sigma2 = MAP_SIZE * np.array([[0.1, 0], [0, 0.1]])
     F2 = multivariate_normal.pdf(coords, mean=mu2, cov=Sigma2)
     F2 = np.reshape(F2, (len(y), len(x)))
     F2 = F2 / np.sum(F2)
