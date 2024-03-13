@@ -6,6 +6,7 @@
 
 import numpy as np
 
+
 def motion_decode(motion):
     # Find the angle of the sum vector
     angle = np.arctan2(motion[1], motion[0])
@@ -14,19 +15,14 @@ def motion_decode(motion):
     octant = (round(8 * angle / (2 * np.pi) + 8) % 8) + 1
 
     move_array = np.array(
-        [[1, 0],
-        [1, 1],
-        [0, 1],
-        [-1, 1],
-        [-1, 0],
-        [-1, -1],
-        [0, -1],
-        [1, -1]])
+        [[1, 0], [1, 1], [0, 1], [-1, 1], [-1, 0], [-1, -1], [0, -1], [1, -1]]
+    )
 
     # Map the octant to a move
     move = move_array[octant - 1]
 
     return move
+
 
 # Example usage
 if __name__ == "__main__":

@@ -3,21 +3,29 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+
 def plot_model(model):
-    MAP_SIZE = model['MAPSIZE']
+    MAP_SIZE = model["MAPSIZE"]
     x = np.arange(1, MAP_SIZE + 1)
     y = np.arange(1, MAP_SIZE + 1)
     X, Y = np.meshgrid(x, y)
-    
+
     plt.clf()
-    h = plt.pcolormesh(X, Y, model['Pmap'])
-    
+    h = plt.pcolormesh(X, Y, model["Pmap"])
+
     # Start position
-    plt.plot(model['xs'] + MAP_SIZE // 2 + 0.5, model['ys'] + MAP_SIZE // 2 + 0.5, 'wo', markersize=3, markerfacecolor='w', linewidth=1)
-    
-    plt.xlabel('x (cell)')
-    plt.ylabel('y (cell)')
-    
+    plt.plot(
+        model["xs"] + MAP_SIZE // 2 + 0.5,
+        model["ys"] + MAP_SIZE // 2 + 0.5,
+        "wo",
+        markersize=3,
+        markerfacecolor="w",
+        linewidth=1,
+    )
+
+    plt.xlabel("x (cell)")
+    plt.ylabel("y (cell)")
+
     # Set properties
     h.set_linewidth(0.1)
     cb = plt.colorbar(h)
@@ -31,12 +39,8 @@ def plot_model(model):
     plt.gcf().set_size_inches(3.5, 2.5)  # Set the map size
     plt.show()
 
+
 # Example usage
 if __name__ == "__main__":
-    model = {
-        'MAPSIZE': 40,
-        'Pmap': np.random.rand(40, 40),
-        'xs': 0,
-        'ys': 0
-    }
+    model = {"MAPSIZE": 40, "Pmap": np.random.rand(40, 40), "xs": 0, "ys": 0}
     plot_model(model)
